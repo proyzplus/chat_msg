@@ -10,7 +10,8 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import api from '@/api/index.js';
-import Vant from 'vant';
+import Vant from 'vant'; 
+
 import 'vant/lib/index.css';
 import * as filters from '@/utils/filters/index.js'; 
 
@@ -23,7 +24,7 @@ Object.keys(filters).forEach(key => {
 });
 
 Vue.prototype.$api = api;
-Vue.use(Vant); 
+Vue.use(Vant);  
 Vue.config.productionTip = false;
 
 

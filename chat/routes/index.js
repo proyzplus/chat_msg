@@ -4,6 +4,6 @@ var cate = require("../controllers/cateController");
 
 
 /* GET home page. */
-router.get('/', cate.getUserList);
+router.get('/login', cate.getUserList);
 
 module.exports = router;

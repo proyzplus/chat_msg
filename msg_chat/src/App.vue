@@ -2,41 +2,26 @@
  * @Author: proyzplus
  * @Date: 2021-09-10 19:46:50
  * @LastEditors: proyzplus
- * @LastEditTime: 2021-09-16 20:54:45
+ * @LastEditTime: 2021-09-20 19:17:14
  * @Description: Description
 -->
 <template>
   <div id="app">
-    <div class="main-page">
-      <meet v-show="active==0"></meet>
-    </div>
-    <div class="main-footer">
-      <van-tabbar v-model="active">
-        <van-tabbar-item icon="home-o">遇见</van-tabbar-item>
-        <van-tabbar-item icon="search" dot>讯息</van-tabbar-item>
-        <van-tabbar-item icon="friends-o" badge="5">动态</van-tabbar-item>
-        <van-tabbar-item icon="setting-o" badge="20">我的</van-tabbar-item>
-      </van-tabbar>
-    </div>
+    <router-view></router-view>
   </div>
 </template>
-<script>
-import login from "./api/login/index"
-import meet from "./views/meet/index.vue"
+<script>  
 export default {
-  components: {
-    meet
-  },
   data() {
-    return {
-      active: 0,
-    }
+    return {}
   },
-  created() {  
-    login.getData().then(res => {
-      console.log(res)
-    })
-
+  created() {
+    const isLogin = sessionStorage.getItem("isLogin");
+    if (isLogin) {
+      this.$router.push({ name: 'Home' });
+    } else {
+      this.$router.push({ name: 'Login' });
+    }
   }
 }
 </script>

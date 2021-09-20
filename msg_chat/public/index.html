@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <script type="text/javascript">
+			/* If below IE9 */
+			if (navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.split(";")[1].replace(/[ ]/g, "") ==
+				"MSIE6.0" || navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.split(";")[1].replace(
+					/[ ]/g, "") == "MSIE7.0" || navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.split(";")[
+					1].replace(/[ ]/g, "") == "MSIE8.0") {
+				alert("您的浏览器版本太低，请使用IE9及以上或Chrome、Firefox等浏览器!!");
+			}
+		</script>
   </head>
   <body>
     <noscript>
